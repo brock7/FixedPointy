@@ -333,5 +333,17 @@ namespace FixedPointy {
 
 			return new Fix((int)y);
 		}
-	}
+
+        public static Fix Normalize(Fix deg)
+        {
+            Fix normalizedDeg = deg % 360;
+
+            if (normalizedDeg <= -180)
+                normalizedDeg += 360;
+            else if (normalizedDeg > 180)
+                normalizedDeg -= 360;
+
+            return normalizedDeg;
+        }
+    }
 }

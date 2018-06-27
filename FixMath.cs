@@ -336,12 +336,12 @@ namespace FixedPointy {
 
         public static Fix Normalize(Fix deg)
         {
-            Fix normalizedDeg = deg % 360;
+            Fix normalizedDeg = deg % (FixConst)360.0f;
 
-            if (normalizedDeg <= -180)
-                normalizedDeg += 360;
-            else if (normalizedDeg > 180)
-                normalizedDeg -= 360;
+            if (normalizedDeg <= (FixConst)(-180.0f))
+                normalizedDeg += (FixConst)360.0f;
+            else if (normalizedDeg > (FixConst)180.0f)
+                normalizedDeg -= (FixConst)360.0f;
 
             return normalizedDeg;
         }
